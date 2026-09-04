@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Objeto 1",
+    "description": "Descripción 1",
+    "id": 1,
+    "precio": "45000",
+    "categoria": "A",
+    "stock": "23",
+    "fecha": "2026-08-31"
+  },
+  {
+    "name": "Objeto 2",
+    "description": "Descripción 2",
+    "id": 2,
+    "precio": "50000",
+    "categoria": "e",
+    "stock": "5",
+    "fecha": "2026-09-02"
+  }
+]
