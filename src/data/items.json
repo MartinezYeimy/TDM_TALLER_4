@@ -1,20 +1,74 @@
 [
   {
-    "name": "Objeto 1",
-    "description": "Descripción 1",
+    "name": "Agenda",
+    "description": "Agenda de 100 hojas",
     "id": 1,
-    "precio": "45000",
-    "categoria": "A",
+    "price": "25000",
+    "category": "Agendas",
     "stock": "23",
-    "fecha": "2026-08-31"
+    "date": "2026-08-31"
   },
   {
-    "name": "Objeto 2",
-    "description": "Descripción 2",
+    "name": "Resaltador",
+    "description": "Resaltador amarillo",
     "id": 2,
-    "precio": "50000",
-    "categoria": "e",
+    "price": "3000",
+    "category": "Escritura",
+    "stock": "18",
+    "date": "2026-08-02"
+  },
+  {
+    "name": "Esfero",
+    "description": "Esfero rojo punta fina",
+    "id": 3,
+    "price": "2000",
+    "category": "Escritura",
+    "stock": "15",
+    "date": "2026-09-02"
+  },
+  {
+    "name": "Carpeta",
+    "description": "Carpeta plástica tamaño carta",
+    "id": 4,
+    "price": "3000",
+    "category": "Organización",
+    "stock": "6",
+    "date": "2026-09-01"
+  },
+  {
+    "name": "Regla 15cm",
+    "description": "Regla plástica azul",
+    "id": 5,
+    "price": "50000",
+    "category": "Medición y dibujo",
     "stock": "5",
-    "fecha": "2026-09-02"
+    "date": "2026-09-03"
+  },
+  {
+    "name": "Tijeras",
+    "description": "Tijeras punta roma moradas",
+    "id": 6,
+    "price": "5000",
+    "category": "Útiles escolares",
+    "stock": "12",
+    "date": "2026-09-04"
+  },
+  {
+    "name": "Pegante en barra",
+    "description": "Pegante en barra mediano",
+    "id": 7,
+    "price": "2800",
+    "category": "Adhesivos y pegantes",
+    "stock": "7",
+    "date": "2026-09-05"
+  },
+  {
+    "name": "Colores",
+    "description": "Lapices de colores doble punta",
+    "id": 8,
+    "price": "28000",
+    "category": "Útiles escolares",
+    "stock": "30",
+    "date": "2026-09-06"
   }
 ]
