@@ -1,74 +1,76 @@
-[
-  {
-    "name": "Agenda",
-    "description": "Agenda de 100 hojas",
-    "id": 1,
-    "price": "25000",
-    "category": "Agendas",
-    "stock": "23",
-    "date": "2026-08-31"
-  },
-  {
-    "name": "Resaltador",
-    "description": "Resaltador amarillo",
-    "id": 2,
-    "price": "3000",
-    "category": "Escritura",
-    "stock": "18",
-    "date": "2026-08-02"
-  },
-  {
-    "name": "Esfero",
-    "description": "Esfero rojo punta fina",
-    "id": 3,
-    "price": "2000",
-    "category": "Escritura",
-    "stock": "15",
-    "date": "2026-09-02"
-  },
-  {
-    "name": "Carpeta",
-    "description": "Carpeta plástica tamaño carta",
-    "id": 4,
-    "price": "3000",
-    "category": "Organización",
-    "stock": "6",
-    "date": "2026-09-01"
-  },
-  {
-    "name": "Regla 15cm",
-    "description": "Regla plástica azul",
-    "id": 5,
-    "price": "50000",
-    "category": "Medición y dibujo",
-    "stock": "5",
-    "date": "2026-09-03"
-  },
-  {
-    "name": "Tijeras",
-    "description": "Tijeras punta roma moradas",
-    "id": 6,
-    "price": "5000",
-    "category": "Útiles escolares",
-    "stock": "12",
-    "date": "2026-09-04"
-  },
-  {
-    "name": "Pegante en barra",
-    "description": "Pegante en barra mediano",
-    "id": 7,
-    "price": "2800",
-    "category": "Adhesivos y pegantes",
-    "stock": "7",
-    "date": "2026-09-05"
-  },
-  {
-    "name": "Colores",
-    "description": "Lapices de colores doble punta",
-    "id": 8,
-    "price": "28000",
-    "category": "Útiles escolares",
-    "stock": "30",
-    "date": "2026-09-06"
-  }
-]
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Agenda",
+      "description": "Agenda de 100 hojas",
+      "price": 32000,
+      "category": "Agendas",
+      "stock": 23,
+      "date": "2026-08-31"
+    },
+    {
+      "id": 2,
+      "name": "Resaltador",
+      "description": "Resaltador amarillo",
+      "price": 3000,
+      "category": "Escritura",
+      "stock": 18,
+      "date": "2026-08-02"
+    },
+    {
+      "id": 3,
+      "name": "Esfero",
+      "description": "Esfero rojo punta fina",
+      "price": 2000,
+      "category": "Escritura",
+      "stock": 15,
+      "date": "2026-09-02"
+    },
+    {
+      "id": 4,
+      "name": "Carpeta",
+      "description": "Carpeta plástica tamaño carta",
+      "price": 3000,
+      "category": "Organización",
+      "stock": 6,
+      "date": "2026-09-01"
+    },
+    {
+      "id": 5,
+      "name": "Regla 15cm",
+      "description": "Regla plástica azul",
+      "price": 50000,
+      "category": "Medición y dibujo",
+      "stock": 5,
+      "date": "2026-09-03"
+    },
+    {
+      "id": 6,
+      "name": "Tijeras",
+      "description": "Tijeras punta roma moradas",
+      "price": 5000,
+      "category": "Útiles escolares",
+      "stock": 12,
+      "date": "2026-09-04"
+    },
+    {
+      "id": 7,
+      "name": "Pegante en barra",
+      "description": "Pegante en barra mediano",
+      "price": 2800,
+      "category": "Adhesivos y pegantes",
+      "stock": 7,
+      "date": "2026-09-05"
+    },
+    {
+      "id": 8,
+      "name": "Colores",
+      "description": "Lapices de colores doble punta",
+      "price": 28000,
+      "stock": 30,
+      "category": "Medición y dibujo",
+      "date": "2026-09-06"
+    }
+  ]
+}

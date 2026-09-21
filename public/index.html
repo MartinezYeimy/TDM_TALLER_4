@@ -1,47 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión</title>
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Items</title>
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#a80e6d">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="Aplicación de gestión y catálogo de items con soporte offline.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Gestión</a></li>
-            <li><a href="catalog.html">Catálogo</a></li>
-        </ul>
-    </nav>
+<body class="p-6">
 
-    <h1>Gestión de Items</h1>
+  <nav class="navbar mb-6 flex justify-between items-center">
+    <ul class="flex gap-4">
+      <li><a href="index.html">Gestión</a></li>
+      <li><a href="catalog.html">Catálogo</a></li>
+    </ul>
+    <div class="flex gap-2 items-center">
+      <button id="btn-theme" class="btn btn-secondary" aria-label="Cambiar tema">🌓</button>
+      <button id="installBtn" hidden class="btn btn-primary" aria-label="Instalar app">📲 Instalar</button>
+    </div>
+  </nav>
 
-    <form id="itemForm">
-        <input type="text" id="name" placeholder="Nombre del item" required>
-        <input type="text" id="description" placeholder="Descripción">
-        <input type="text" id="price" placeholder="Precio">
-        <input type="text" id="category" placeholder="Categoría">
-        <input type="text" id="stock" placeholder="Stock">
-        <input type="date" id="date" placeholder="Fecha">
-        <button type="submit" id="submitBtn">Agregar</button>
-    </form>
+  <h1 class="page-title mb-6">Gestión de Items</h1>
+  <form id="itemForm" class="flex flex-wrap gap-6 mb-6 items-start">
+    <div class="flex items-center gap-2 flex-[2] min-w-[400px]">
+      <label for="name" class="font-semibold whitespace-nowrap">Nombre del item</label>
+      <input type="text" id="name" class="input flex-1" placeholder="Nombre del item" required>
+    </div>
 
-    <table>
-        <thead>
-            <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-             <th>Precio</th>
-            <th>Categoría</th>
-            <th>Stock</th>
-            <th>Fecha</th>
-            <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="itemsTable"></tbody>
+    <div class="flex items-center gap-2 flex-[1.5] min-w-[300px]">
+      <label for="description" class="font-semibold whitespace-nowrap">Descripción</label>
+      <input type="text" id="description" class="input flex-1" placeholder="Descripción">
+    </div>
+
+    <div class="flex items-center gap-2 flex-[1] min-w-[180px] max-w-[220px]">
+      <label for="price" class="font-semibold whitespace-nowrap">Precio</label>
+      <input type="number" id="price" class="input flex-1" placeholder="Precio" min="0" required>
+    </div>
+
+    <div class="flex items-center gap-2 flex-[2] min-w-[400px]">
+      <label for="category" class="font-semibold whitespace-nowrap">Categoría</label>
+      <select id="category" class="input flex-1" required>
+        <option value="">Seleccione una categoría</option>
+        <option value="Agendas">Agendas</option>
+        <option value="Escritura">Escritura</option>
+        <option value="Organización">Organización</option>
+        <option value="Medición y dibujo">Medición y dibujo</option>
+        <option value="Útiles escolares">Útiles escolares</option>
+        <option value="Adhesivos y pegantes">Adhesivos y pegantes</option>
+        <option value="Papelería general">Papelería general</option>
+        <option value="Arte y manualidades">Arte y manualidades</option>
+        <option value="Tecnología escolar">Tecnología escolar</option>
+        <option value="Archivadores y carpetas">Archivadores y carpetas</option>
+      </select>
+    </div>
+
+    <div class="flex items-center gap-2 flex-[1] min-w-[180px] max-w-[220px]">
+      <label for="stock" class="font-semibold whitespace-nowrap">Stock</label>
+      <input type="number" id="stock" class="input flex-1" placeholder="Stock" min="0" required>
+    </div>
+
+    <div class="flex items-center gap-2 flex-[1.5] min-w-[250px] max-w-[300px]">
+      <label for="date" class="font-semibold whitespace-nowrap">Fecha</label>
+      <input type="date" id="date" class="input flex-1">
+      <button type="submit" id="submitBtn" class="btn btn-primary ml-auto">Agregar</button>
+    </div>
+  </form>
+
+  <div class="items-table-wrapper p-4">
+    <table class="items-table w-full border-collapse">
+      <thead>
+        <tr>
+          <th class="text-center">ID</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Descripción</th>
+          <th class="text-center">Precio</th>
+          <th class="text-center">Categoría</th>
+          <th class="text-center">Stock</th>
+          <th class="text-center">Fecha</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="itemsTable">
+        <tr>
+          <td class="text-left">1</td>
+          <td class="text-left">Agenda</td>
+          <td class="text-left">Agenda de 100 hojas</td>
+          <td class="text-left">32000</td>
+          <td class="text-left"><span class="badge">Agendas</span></td>
+          <td class="text-left">23</td>
+          <td class="text-left">2026-08-31</td>
+          <td class="flex gap-2 justify-center">
+            <button class="table-btn">Editar</button>
+            <button class="table-btn">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 
-    <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
+  <script src="./js/theme.js"></script>
+  <script>
+    // Registrar Service Worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+        .then(() => console.log("Service Worker registrado"))
+        .catch(err => console.error("Error registrando SW:", err));
+    }
+
+    // Manejo botón de instalación
+    let deferredPrompt;
+    const installBtn = document.getElementById("installBtn");
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.hidden = false;
+    });
+
+    installBtn.addEventListener("click", async () => {
+      installBtn.hidden = true;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log("User response to install:", outcome);
+      deferredPrompt = null;
+    });
+  </script>
 </body>
 </html>

@@ -1,32 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Gestión</a></li>
-            <li><a href="catalog.html">Catálogo</a></li>
-        </ul>
-    </nav>
+<body class="p-6">
 
-    <h1>Catálogo de Items</h1>
+  <nav class="navbar mb-6 flex justify-between items-center">
+    <ul class="flex gap-4">
+      <li><a href="index.html">Gestión</a></li>
+      <li><a href="catalog.html">Catálogo</a></li>
+    </ul>
+    <button id="btn-theme" class="btn btn-secondary" aria-label="Cambiar tema">🌓</button>
+  </nav>
 
-    <div id="catalogContainer" class="catalog-grid">
-        <!-- Aquí se van a renderizar las tarjetas con los items -->
+  <h1 class="page-title mb-6">Catálogo de Items</h1>
+
+  <div class="search-bar flex gap-4 items-center mb-6">
+    <label for="search">Buscar</label>
+    <input type="text" id="search" class="input" placeholder="Buscar...">
+
+    <label for="filter">Categoría</label>
+    <select id="filter" class="input">
+      <option value="">Todas las categorías</option>
+      <option value="Agendas">Agendas</option>
+      <option value="Escritura">Escritura</option>
+      <option value="Organización">Organización</option>
+      <option value="Medición y dibujo">Medición y dibujo</option>
+      <option value="Útiles escolares">Útiles escolares</option>
+      <option value="Adhesivos y pegantes">Adhesivos y pegantes</option>
+      <option value="Papelería general">Papelería general</option>
+      <option value="Arte y manualidades">Arte y manualidades</option>
+      <option value="Tecnología escolar">Tecnología escolar</option>
+      <option value="Archivadores y carpetas">Archivadores y carpetas</option>
+    </select>
+
+    <label for="sort">Ordenar por</label>
+    <select id="sort" class="input">
+      <option value="">Sin orden</option>
+      <option value="price">Precio</option>
+      <option value="stock">Stock</option>
+    </select>
+  </div>
+
+  <div id="catalogContainer" class="catalog-grid p-4">
+    <div class="card">
+      <h3 class="font-bold mb-1">Nombre del Item</h3>
+      <span class="badge mb-2">Categoría</span>
+      <button class="btn btn-primary detail-btn">Ver detalle</button>
     </div>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times</span>
-            <h2 class="modal-title"></h2>
-            <div class="modal-body"></div>
-        </div>
-    </div>
+  </div>
 
-    <script type="module" src="./js/catalog.js"></script>
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" aria-label="Cerrar">&times;</span>
+      <h2 class="modal-title"></h2>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/catalog.js"></script>
+  <script src="./js/theme.js"></script>
+  <!-- Registro del Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+        .then(() => console.log("Service Worker registrado"))
+        .catch(err => console.error("Error registrando SW:", err));
+    }
+  </script>
 </body>
 </html>
