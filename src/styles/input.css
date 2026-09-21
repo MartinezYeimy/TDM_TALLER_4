@@ -1,0 +1,427 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-brand-light: #ec4899;
+  --color-brand: #a80e6d;
+  --color-brand-dark: #360a5e;
+  --color-surface: #f8fafc;
+  --color-card: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #050505;
+  --color-border: #e2e8f0;
+  --font-sans: "Poppins", sans-serif;
+  --radius-card: 12px;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@layer base {
+
+  body {
+  @apply bg-[var(--color-surface)]
+         text-[var(--color-text)]
+         font-sans
+         min-h-screen
+         p-6; 
+}
+
+  h1 {
+    @apply text-center text-3xl font-bold;
+  }
+
+  button,
+  input,
+  select {
+    font-family: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+}
+
+@layer components {
+
+  .btn {
+    @apply inline-flex
+           items-center
+           justify-center
+           gap-2
+           px-4
+           py-2
+           font-sans
+           font-semibold
+           cursor-pointer
+           transition-all
+           duration-200
+           rounded-[var(--radius-card)]
+           border
+           border-transparent
+           focus-visible:outline-2
+           focus-visible:outline-offset-2
+           focus-visible:outline-[var(--color-brand)];
+  }
+
+  .btn-primary {
+    @apply bg-[var(--color-brand)]
+           text-white
+           shadow-[var(--shadow-card)]
+           hover:bg-[var(--color-brand-dark)]
+           hover:-translate-y-0.5
+           active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--color-brand-light)]
+           text-white
+           shadow-[var(--shadow-card)]
+           hover:bg-[var(--color-brand)]
+           active:scale-95;
+  }
+
+.card {
+  @apply bg-[var(--color-card)]
+         text-[var(--color-text)]
+         font-sans
+         text-center
+         flex flex-col items-center justify-center
+         rounded-[var(--radius-card)]
+         border
+         border-[var(--color-border)]
+         shadow-[var(--shadow-card)]
+         p-4;
+}
+
+.card-centered {
+  @apply text-center flex flex-col items-center justify-center;
+}
+
+  .input {
+    @apply w-full
+           border
+           border-[var(--color-border)]
+           bg-[var(--color-card)]
+           text-[var(--color-text)]
+           rounded-[var(--radius-card)]
+           px-3
+           py-2
+           font-sans
+           outline-none
+           transition-all
+           duration-200
+           focus:border-[var(--color-brand)]
+           focus:ring-2
+           focus:ring-[var(--color-brand-light)];
+  }
+
+  .input::placeholder {
+    color: #64748b;
+  }
+
+  .badge {
+    @apply inline-block
+           px-3
+           py-1
+           rounded-full
+           bg-[var(--color-brand-dark)]
+           text-white
+           text-xs
+           font-bold
+           whitespace-nowrap;
+  }
+
+  .navbar {
+    @apply flex
+           justify-between
+           items-center
+           gap-4
+           bg-[var(--color-brand)]
+           px-5
+           py-3
+           rounded-xl
+           shadow-[var(--shadow-card)]
+           mb-6;
+  }
+
+  .navbar ul {
+    @apply flex
+           flex-wrap
+           items-center
+           gap-6
+           list-none
+           m-0
+           p-0;
+  }
+
+  .navbar a {
+    @apply text-white
+           font-semibold
+           no-underline
+           transition-all
+           duration-200;
+  }
+
+  .navbar a:hover {
+    @apply text-pink-200;
+  }
+
+  #btn-theme {
+    @apply inline-flex
+           items-center
+           justify-center
+           w-10
+           h-10
+           rounded-full
+           bg-white/15
+           text-white
+           border
+           border-white/20
+           transition-all
+           duration-200
+           hover:bg-white/25
+           hover:scale-105
+           active:scale-95;
+  }
+
+  .page-title {
+    @apply text-center
+           text-3xl
+           font-bold
+           text-[var(--color-brand-dark)]
+           mb-6;
+  }
+
+#itemForm {
+  @apply max-w-full mx-auto p-6 bg-transparent border-none shadow-none;
+}
+
+
+.form-row {
+  @apply flex items-center gap-4 mb-4 flex-wrap;
+}
+
+.form-row label {
+  @apply w-40 shrink-0 font-semibold text-[var(--color-text)];
+}
+
+.form-row input,
+.form-row select {
+  @apply flex-1;
+}
+
+  .form-submit {
+    @apply flex
+           justify-end
+           mt-5;
+  }
+
+  .items-table-wrapper {
+  @apply w-full
+         overflow-x-auto
+         mt-6
+         p-4
+         rounded-[var(--radius-card)]
+         border
+         border-[var(--color-border)]
+         shadow-[var(--shadow-card)];
+}
+
+.items-table {
+  @apply w-full
+         bg-[var(--color-card)]
+         border-collapse;
+}
+
+.items-table th {
+  @apply px-4
+         py-3
+         bg-[var(--color-brand)]
+         text-white
+         font-bold
+         text-center
+         border
+         border-[var(--color-brand)];
+}
+
+.items-table td {
+  @apply px-4
+         py-3
+         border
+         border-[var(--color-border)]
+         text-[var(--color-text)]
+         text-left;
+}
+
+.items-table tbody tr {
+  @apply transition-colors
+         duration-150;
+}
+
+.items-table tbody tr:hover {
+  @apply bg-pink-50;
+}
+
+.table-btn {
+  @apply inline-flex
+         items-center
+         justify-center
+         bg-[var(--color-brand)]
+         text-white
+         font-medium
+         rounded-[var(--radius-card)]
+         px-3 py-1.5
+         border
+         border-[var(--color-border)]
+         shadow-[var(--shadow-card)]
+         hover:bg-[var(--color-brand-dark)]
+         cursor-pointer
+         transition-all duration-200;
+}
+
+.detail-btn {
+  @apply bg-[var(--color-brand)]
+         text-white
+         rounded-[var(--radius-card)]
+         px-3 py-1.5
+         shadow-[var(--shadow-card)]
+         hover:bg-[var(--color-brand-dark)]
+         transition-all duration-200;
+}
+
+.catalog-grid {
+  @apply grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-4;
+}
+
+.catalog-grid .card {
+  @apply text-center flex flex-col items-center justify-center
+         overflow-hidden
+         transition-all
+         duration-200
+         hover:-translate-y-1
+         hover:shadow-lg;
+}
+
+.catalog-grid .card h3,
+.catalog-grid .card p,
+.catalog-grid .card .badge,
+.catalog-grid .card .detail-btn {
+  @apply mx-auto text-center;
+}
+
+  .modal {
+    @apply fixed
+           inset-0
+           hidden
+           items-center
+           justify-center
+           bg-black/60
+           backdrop-blur-sm
+           z-50
+           p-4;
+  }
+
+  .modal-content {
+    @apply relative
+           bg-[var(--color-card)]
+           text-[var(--color-text)]
+           p-6
+           rounded-2xl
+           shadow-2xl
+           w-[90%]
+           max-w-md
+           border
+           border-[var(--color-border)];
+  }
+
+  .modal-title {
+    @apply text-xl
+           font-bold
+           text-[var(--color-brand-dark)]
+           mb-4;
+  }
+
+  .close {
+    @apply absolute
+           top-4
+           right-4
+           text-[var(--color-text)]
+           cursor-pointer
+           font-bold
+           text-xl
+           hover:text-[var(--color-brand)];
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+
+  [data-theme="oscuro"] {
+    --color-surface: #0f172a;
+    --color-card: #1e293b;
+
+    --color-text: #f1f5f9;
+    --color-muted: #e0e1e2;
+
+    --color-border: #334155;
+
+    --color-brand-light: #f472b6;
+    --color-brand: #be185d;
+    --color-brand-dark: #831843;
+  }
+
+  [data-theme="oscuro"] .page-title {
+    @apply text-pink-300;
+  }
+
+  [data-theme="oscuro"] .items-table tbody tr:hover {
+    @apply bg-slate-700;
+  }
+
+  [data-theme="oscuro"] .input {
+    @apply bg-slate-800
+           text-white
+           border-slate-600;
+  }
+
+  [data-theme="oscuro"] .input::placeholder {
+    color: #cbd5e1;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .navbar {
+    @apply flex-col
+           items-stretch;
+  }
+
+  .navbar ul {
+    @apply justify-center
+           gap-4;
+  }
+
+  #btn-theme {
+    @apply self-center;
+  }
+
+  .form-row {
+    @apply flex-col
+           items-stretch
+           gap-2;
+  }
+
+  .form-row label {
+    @apply w-full;
+  }
+  
+
+  #itemForm {
+    @apply p-4;
+  }
+
+}
+/* Se usó copilot en parte del input.css */
